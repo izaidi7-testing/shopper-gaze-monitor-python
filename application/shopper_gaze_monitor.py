@@ -146,7 +146,7 @@ def message_runner():
     while KEEP_RUNNING:
         payload = json.dumps({"Shopper": INFO.shopper, "Looker": INFO.looker})
         time.sleep(1)
-        CLIENT.publish(TOPIC, payload=payload)
+#         CLIENT.publish(TOPIC, payload=payload)
 
 
 def main():
@@ -156,13 +156,13 @@ def main():
     """
     global INFO
     global DELAY
-    global CLIENT
+#     global CLIENT
     global KEEP_RUNNING
     global POSE_CHECKED
     global TARGET_DEVICE
     global is_async_mode
-    CLIENT = mqtt.Client()
-    CLIENT.connect(MQTT_HOST, MQTT_PORT, MQTT_KEEPALIVE_INTERVAL)
+#     CLIENT = mqtt.Client()
+#     CLIENT.connect(MQTT_HOST, MQTT_PORT, MQTT_KEEPALIVE_INTERVAL)
 
     log.basicConfig(format="[ %(levelname)s ] %(message)s",
                     level=log.INFO, stream=sys.stdout)
@@ -322,8 +322,8 @@ def main():
     infer_network_pose.clean()
     message_thread.join()
     cap.release()
-    cv2.destroyAllWindows()
-    CLIENT.disconnect()
+#     cv2.destroyAllWindows()
+#     CLIENT.disconnect()
 
 
 if __name__ == '__main__':
