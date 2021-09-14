@@ -25,7 +25,7 @@
 apt-get update
 apt-get install python3-pip
 apt-get install ffmpeg libsm6 libxext6  -y
-apt-get install mosquitto mosquitto-clients
+# apt-get install mosquitto mosquitto-clients
 # pip3 install numpy jupyter paho-mqtt
 
 #Download the video
