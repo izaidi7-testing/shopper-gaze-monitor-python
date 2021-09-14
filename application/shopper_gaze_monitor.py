@@ -297,7 +297,14 @@ def main():
         cv2.putText(frame, "Looker: {}".format(INFO.looker), (0, 110), cv2.FONT_HERSHEY_SIMPLEX,
                     0.5, (255, 255, 255), 1)
 
-        cv2.imshow("Shopper Gaze Monitor", frame)
+        parent_dir = "/data/"
+        directory = "result"
+        path = os.path.join(parent_dir, directory)
+        if os.path.exists(path):
+            print("{} folder exists".format(directory))
+        else:
+            os.mkdir(path)        
+        cv2.imwrite(os.path.join(path, 'Shopper_Gaze_Monitor.jpg'), frame)
 
         if key_pressed == 27:
             print("Attempting to stop background threads")
