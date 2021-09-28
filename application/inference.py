@@ -75,17 +75,17 @@ class Network:
 
         if "CPU" in device:
             supported_layers = self.plugin.query_network(self.net, "CPU")
-            not_supported_layers = \
-                [l for l in self.net.layers.keys() if l not in supported_layers]
-            if len(not_supported_layers) != 0:
-                log.error("Following layers are not supported by "
-                          "the plugin for specified device {}:\n {}".
-                          format(device,
-                                 ', '.join(not_supported_layers)))
-                log.error("Please try to specify cpu extensions library path"
-                          " in command line parameters using -l "
-                          "or --cpu_extension command line argument")
-                sys.exit(1)
+#             not_supported_layers = \
+#                 [l for l in self.net.layers.keys() if l not in supported_layers]
+#             if len(not_supported_layers) != 0:
+#                 log.error("Following layers are not supported by "
+#                           "the plugin for specified device {}:\n {}".
+#                           format(device,
+#                                  ', '.join(not_supported_layers)))
+#                 log.error("Please try to specify cpu extensions library path"
+#                           " in command line parameters using -l "
+#                           "or --cpu_extension command line argument")
+#                 sys.exit(1)
 
         if num_requests == 0:
             # Loads network read from IR to the plugin
