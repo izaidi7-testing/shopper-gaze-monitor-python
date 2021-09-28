@@ -304,7 +304,7 @@ def main():
             print("{} folder exists".format(directory))
         else:
             os.mkdir(path)        
-        cv2.imwrite(os.path.join(path, 'Shopper_Gaze_Monitor.jpg'), frame)
+        cv2.imwrite(os.path.join(path, 'Shopper_Gaze_Monitor.gif'), frame)
 
         if key_pressed == 27:
             print("Attempting to stop background threads")
