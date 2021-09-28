@@ -307,16 +307,16 @@ def main():
         cv2.imwrite(os.path.join(path, 'Shopper_Gaze_Monitor-{}.jpg'.format(time.time()), frame)
 
         if key_pressed == 27:
-            print("Attempting to stop background threads")
-            KEEP_RUNNING = False
-            break
+                    print("Attempting to stop background threads")
+                    KEEP_RUNNING = False
+                    break
         if key_pressed == 9:
-            is_async_mode = not is_async_mode
-            print("Switched to {} mode".format("async" if is_async_mode else "sync"))
+                    is_async_mode = not is_async_mode
+                    print("Switched to {} mode".format("async" if is_async_mode else "sync"))
 
         if is_async_mode:
-            # Swap infer request IDs
-            cur_request_id, next_request_id = next_request_id, cur_request_id
+                    # Swap infer request IDs
+                    cur_request_id, next_request_id = next_request_id, cur_request_id
 
     infer_network.clean()
     infer_network_pose.clean()
